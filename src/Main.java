@@ -14,12 +14,14 @@ public class Main {
     }
     //내부 클래스: 외부와 강하게 결합되지 않음
     private class ClickHandler implements OnClickListener { //버튼 클릭 시 실제 수행할 로직
+        //람다식으로 전환 가능
         public void onClick() {
             System.out.println("Button was clicked!");
         }
     }
     public void simulate() { //테스트
         setOnClickListener(new ClickHandler());
+        //setOnClickListener(() -> System.out.println("Button was clicked!"));
         click();
     }
     public static void main(String[] args) {
